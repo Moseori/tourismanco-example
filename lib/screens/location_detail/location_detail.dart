@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'text_section.dart';
-import 'image_banner.dart';
+import '../../widgets/image_banner.dart';
 import '../../models/location.dart';
 
 class LocationDetail extends StatelessWidget{
@@ -13,13 +13,14 @@ class LocationDetail extends StatelessWidget{
     final location = Location.fetchByID(_locationID);
     return Scaffold(
       appBar: AppBar(
-        title: Text(location.name),
+        title: Text(location.name , style: Theme.of(context).appBarTheme.textTheme.title,),
+        backgroundColor: Colors.white,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          ImageBanner(location.imagePath),
+          ImageBanner(assetPath : location.imagePath),
         ]..addAll(textSections(location)),
       )
     );

@@ -40,6 +40,8 @@ class App extends StatelessWidget {
         ),
         textTheme: TextTheme(
             title: TitleTextStyle,
+            subtitle: SubTitleTextStyle,
+            caption: CaptionTextStyle,
             body1: Body1TextStyle
         )
     );
